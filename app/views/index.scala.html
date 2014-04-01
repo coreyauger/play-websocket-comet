@@ -1,9 +1,12 @@
 @(message: String)
 
-@main("Welcome to Play Framework") {
+@scripts = {
+    <script src="@routes.Assets.at("javascripts/app.js")"></script>
+    <script src="@routes.Assets.at("javascripts/controllers.js")"></script>
+}
 
-    <div class="well">
-        <h1>@message</h1>
-    </div>
+@main("Welcome to Play WebSocket Comet", scripts) {
+
+    <div ng-view></div>
 
 }
