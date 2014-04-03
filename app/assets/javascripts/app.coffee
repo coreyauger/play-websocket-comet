@@ -3,23 +3,23 @@
 # corey@nxtwv.com
 #
 
-webApp = window.angular.module('walkaboutApp', ['ngRoute','ngSanitize','ui.bootstrap','walkaboutControllers']);
+playWSComet = window.angular.module('playWSComet', ['ngRoute','ngSanitize','ui.bootstrap','playWSCometControllers']);
 
-webApp.config(($locationProvider,$routeProvider) ->
+playWSComet.config(($locationProvider,$routeProvider) ->
   # $locationProvider.html5Mode(true);
   $routeProvider.when('/home',
     templateUrl: '/assets/partials/home.html',
     controller: 'HomeCtrl'
-  ).when('/history',
-    templateUrl: '/assets/partials/history.html',
-    controller: 'HistoryCtrl'
+  ).when('/slides/:username',
+    templateUrl: '/assets/partials/slides.html',
+    controller: 'SlideCtrl'
   ).otherwise(
     redirectTo: '/home'
   )
 )
 
 
-walkaboutApp.run(($rootScope, $location, worker, $modal) ->
+playWSComet.run(($rootScope, $location, worker, $modal) ->
   isDesktop = self.window.innerWidth > 700;
   $rootScope.isDesktop = isDesktop;
 
@@ -78,7 +78,7 @@ walkaboutApp.run(($rootScope, $location, worker, $modal) ->
 
 
 
-walkaboutApp.directive('resize', ($window) ->
+playWSComet.directive('resize', ($window) ->
   (scope, element) ->
     w = angular.element($window)
     scope.getWindowDimensions = ->

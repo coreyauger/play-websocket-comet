@@ -5,19 +5,28 @@
 <head>
     <title>@title</title>
     <link rel='shortcut icon' type='image/png' href='@routes.Assets.at("images/favicon.png")'>
+    <link rel='stylesheet' href='@routes.Assets.at("stylesheets/site.css")'>
     <link rel='stylesheet' href='@routes.WebJarAssets.at(WebJarAssets.locate("bootstrap.min.css"))'>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("angular.js"))'></script>
+    <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("angular-route.js"))'></script>
+    <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("angular-sanitize.js"))'></script>
+
     <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("jquery.min.js"))'></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.js"></script>
+    <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("ui-bootstrap.min.js"))'></script>
+
     @scripts
 </head>
 <body>
-    <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container-fluid">
-                <a id="titleLink" class="brand" href="/">@title</a>
-            </div>
+
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+            <h1><span class="glyphicon glyphicon-certificate"></span>&nbsp;<a id="titleLink" class="brand" href="/">Reactive Slideshare<small> ws / comet</small></a></h1>
         </div>
-    </div>
+    </nav>
+
     <div class="container">
         @content
     </div>

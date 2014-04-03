@@ -12,6 +12,8 @@ import scala.concurrent.Future
 import play.api.libs.json.JsString
 import scala.Some
 import play.api.libs.json.JsObject
+import play.api.Play.current
+import scala.concurrent.ExecutionContext.Implicits.global
 
 /**
  * Created by Corey Auger on 3/29/2014.
